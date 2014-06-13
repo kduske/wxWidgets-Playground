@@ -19,6 +19,8 @@
 
 #include "PlaygroundApp.h"
 
+#include "TestFrame.h"
+
 #include <clocale>
 
 IMPLEMENT_APP(Playground::PlaygroundApp)
@@ -43,6 +45,10 @@ namespace Playground {
             SetExitOnFrameDelete(false);
 #endif
 
+            TestFrame* frame = new TestFrame();
+            frame->Show();
+            frame->CentreOnScreen();
+            
             return true;
         }
 
