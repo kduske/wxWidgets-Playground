@@ -42,7 +42,7 @@ namespace Playground {
             wxImage::AddHandler(new wxPNGHandler());
 
 #ifdef __APPLE__
-            SetExitOnFrameDelete(false);
+            SetExitOnFrameDelete(true);
 #endif
 
             TestFrame* frame = new TestFrame();

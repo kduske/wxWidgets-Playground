@@ -19,9 +19,19 @@
 
 #include "TestFrame.h"
 
+#include "MousePanel.h"
+
+#include <wx/sizer.h>
+
 namespace Playground {
     TestFrame::TestFrame() :
     wxFrame(NULL, wxID_ANY, "Test Frame") {
         SetSize(400, 300);
+        
+        MousePanel* panel = new MousePanel(this);
+        
+        wxSizer* sizer = new wxBoxSizer(wxVERTICAL);
+        sizer->Add(panel, 1, wxEXPAND);
+        SetSizer(sizer);
     }
 }
