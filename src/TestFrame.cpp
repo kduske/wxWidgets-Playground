@@ -19,9 +19,21 @@
 
 #include "TestFrame.h"
 
+#include <wx/log.h> 
+
 namespace Playground {
     TestFrame::TestFrame() :
     wxFrame(NULL, wxID_ANY, "Test Frame") {
         SetSize(400, 300);
+        
+        wxAcceleratorEntry entry(0, WXK_ESCAPE, wxID_HIGHEST + 1);
+        wxAcceleratorTable table(1, &entry);
+        SetAcceleratorTable(table);
+        
+        Bind(wxEVT_COMMAND_MENU_SELECTED, &TestFrame::OnEscape, this, wxID_HIGHEST + 1);
+    }
+
+    void TestFrame::OnEscape(wxCommandEvent& event) {
+        wxLogDebug("Escape!");
     }
 }

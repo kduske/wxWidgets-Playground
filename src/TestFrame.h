@@ -26,6 +26,8 @@ namespace Playground {
     class TestFrame : public wxFrame {
     public:
         TestFrame();
+        
+        void OnEscape(wxCommandEvent& event);
     };
 }
 
